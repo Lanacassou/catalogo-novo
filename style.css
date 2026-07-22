@@ -1,0 +1,160 @@
+/* Configuração básica para zerar o estilo do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fundo do site bem escuro */
+body {
+    background-color: #0d0b14;
+    color: #ffffff;
+}
+
+
+/* Menu de navegação */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #151221;
+    border-bottom: 2px solid #00f0ff; /* Linha neon azul */
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00f0ff;
+}
+
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+header nav a:hover {
+    color: #00f0ff;
+}
+
+/* Banner simples */
+.banner {
+    background-color: #1b172e;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.banner h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ff007f; /* Neon Rosa */
+}
+
+.banner p {
+    color: #b0aeb7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Área do Catálogo */
+.container {
+    padding: 30px 20px;
+}
+
+.titulo-secao {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff007f;
+    padding-left: 10px;
+}
+
+/* Organização dos Cards (Lado a lado) */
+.lista-jogos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Estilo do Card individual */
+.card {
+    background-color: #151221;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 280px;
+    overflow: hidden;
+}
+
+/* Espaço da foto do jogo */
+.foto-jogo {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-weight: bold;
+}
+
+.card-corpo {
+    padding: 15px;
+}
+
+.card-corpo h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.genero {
+    color: #00f0ff;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    color: #b0aeb7;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+/* Botão simples com efeito hover */
+.btn {
+    width: 100%;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ff007f;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #ff007f;
+    box-shadow: 0 0 10px #ff007f; /* Brilho neon ao passar o mouse */
+}
+/* Estilo para a seção Sobre Nós em formato de Balão Centralizado */
+.sobre-nos {
+    margin: 50px auto 30px auto; /* Centraliza o balão na tela */
+    max-width: 700px;            /* Define a largura máxima do balãozinho */
+    padding: 25px 30px;          /* Espaço interno para o texto não sufocar */
+    background-color: #151221;   /* Cor de fundo igual a dos cards */
+    border-radius: 20px;         /* Cantos bem arredondados para dar o efeito de balão */
+    border: 1px solid #333;      /* Borda discreta */
+    box-shadow: 0px 0px 15px rgba(255, 0, 240, 0.1); /* Um brilho bem sutil no fundo */
+}
+
+.sobre-nos p {
+    color: #b0aeb7;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 12px;
+    text-align: justify;         /* Deixa o texto alinhado e elegante */
+}
+
+

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      /* --- ESTILOS DO CARRINHO LATERAL (FLUTUANTE) --- */
+      .carrinho-sidebar {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 320px;
+        max-height: 85vh;
+        background-color: #120e24;
+        border: 2px solid #ff007f;
+        border-radius: 12px;
+        padding: 20px;
+        color: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        display: none;
+        flex-direction: column;
+      }
+
+      .carrinho-sidebar.ativo {
+        display: flex;
+      }
+
+      .carrinho-sidebar h2 {
+        margin-top: 0;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #2a2540;
+        padding-bottom: 10px;
+        color: #ff007f;
+      }
+
+      .carrinho-itens {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 15px;
+      }
+
+      .item-carrinho {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #2a2540;
+      }
+
+      .item-carrinho-info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .item-carrinho-nome {
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .item-carrinho-preco {
+        font-size: 0.8rem;
+        color: #00ff88;
+      }
+
+      .qtd-box {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: #1d1838;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+
+      .qtd-box button {
+        background: transparent;
+        color: #ff007f;
+        border: none;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .linha-resumo {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 8px;
+        font-size: 0.9rem;
+      }
+
+      .linha-resumo.total {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #00ff88;
+        border-top: 1px solid #2a2540;
+        padding-top: 10px;
+        margin-top: 10px;
+      }
+
+      .btn-finalizar {
+        width: 100%;
+        margin-top: 15px;
+        padding: 12px;
+        background-color: #ff007f;
+        border: none;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn-finalizar:hover {
+        background-color: #d6006b;
+      }
+
+      .preco-tag {
+        display: block;
+        font-weight: bold;
+        color: #00ff88;
+        margin: 8px 0;
+      }
+    </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ZONA GAMER</div>
+  <nav>
+    <a href="#">Início</a>
+    <a href="catalog.html">Catálogo de Jogos</a>         
+  </nav>
+</header>
+
+<section class="banner">
+  <div class="banner-texto">
+    <h2>O Mundo dos Jogos</h2>
+    <p>Os melhores jogos com os melhores preços.</p>
+  </div>
+</section>
+
+<main class="container">
+  <h3 class="titulo-secao">Nossos Favoritos</h3>
+
+  <div class="lista-jogos">
+
+    <!-- GTA V -->
+    <div class="card" data-id="101" data-nome="Grand Theft Auto V" data-preco="80.00">
+      <img src="https://th.bing.com/th/id/R.d0fe80e767c839838901faf9b8a63184?rik=iAywxqUoPgHPFw&pid=ImgRaw&r=0" width="280" height="250">  
+      <div class="card-corpo">
+        <h4>Grand Theft Auto V</h4>
+        <p class="genero">Ação e Aventura</p>
+        <p class="descricao">GTA V oferece uma experiência de mundo aberto, narrativa multifacetada e gameplay diversificado.</p>
+        <span class="preco-tag">R$ 198,00</span>
+        <button class="btn btn-add">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- FORTNITE -->
+    <div class="card" data-id="102" data-nome="Fortnite" data-preco="0.00">
+      <img src="https://tse3.mm.bing.net/th/id/OIP.EkJEg47peCmPFyvvP5SnxwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" width="280" height="250">  
+      <div class="card-corpo">
+        <h4>Fortnite</h4>
+        <p class="genero">Battle Royale</p>
+        <p class="descricao">O jogo de tiro mais popular do mundo, famoso por suas danças, parcerias e ser o último sobrevivente.</p>
+        <span class="preco-tag">Grátis</span>
+        <button class="btn btn-add">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- MINECRAFT -->
+    <div class="card" data-id="103" data-nome="Minecraft" data-preco="149.00">
+      <img src="https://p.turbosquid.com/ts-thumb/km/WbExar/MAriIeoi/vswhqjcattxsle47rus4pqpc4lt7lcosje7hx5aw_ycxtdvcnshhvm5ctul5bpnurtpw300/png/1534269166/1920x1080/fit_q87/b449a6e647cb9f52d95180871d091ae1f96116a0/vswhqjcattxsle47rus4pqpc4lt7lcosje7hx5aw_ycxtdvcnshhvm5ctul5bpnurtpw300.jpg" width="279" height="250"> 
+      <div class="card-corpo">
+        <h4>Minecraft</h4>
+        <p class="genero">Sobrevivência e Aventura</p>
+        <p class="descricao">Minecraft é um jogo eletrônico de construção em mundo aberto, onde os jogadores podem explorar e criar.</p>
+        <span class="preco-tag">R$ 149,00</span>
+        <button class="btn btn-add">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<section class="sobre-nos">
+  <h3 class="titulo-secao">Sobre Nós</h3>
+  <p>A Zona Gamer é o seu catálogo definitivo de jogos. Nosso objetivo é reunir os melhores lançamentos e os clássicos mais jogados do momento em um só lugar, de forma rápida, visual e sem complicação. Navegue, descubra o seu próximo jogo e divirta-se!</p>
+</section>
+
+<!-- CARRINHO FLUTUANTE -->
+<aside class="carrinho-sidebar">
+  <h2>Seu Carrinho</h2>
+  <div class="carrinho-itens"></div>
+  <div class="carrinho-resumo">
+    <div class="linha-resumo">
+      <span>Subtotal</span>
+      <span id="subtotal">R$ 0,00</span>
+    </div>
+    <div class="linha-resumo total">
+      <span>Total</span>
+      <span id="total">R$ 0,00</span>
+    </div>
+    <button class="btn-finalizar">Finalizar compra</button>
+  </div>
+</aside>
+
+<!-- SCRIPT DO CARRINHO -->
+<script>
+  let carrinho = [];
+
+  document.querySelectorAll('.btn-add').forEach(botao => {
+    botao.addEventListener('click', (e) => {
+      let card = e.target.closest('.card');
+      let id = card.getAttribute('data-id');
+      let nome = card.getAttribute('data-nome');
+      let preco = parseFloat(card.getAttribute('data-preco'));
+
+      adicionarAoCarrinho(id, nome, preco);
+    });
+  });
+
+  function adicionarAoCarrinho(id, nome, preco) {
+    let itemExistente = carrinho.find(item => item.id === id);
+
+    if (itemExistente) {
+      itemExistente.qtd++;
+    } else {
+      carrinho.push({ id, nome, preco, qtd: 1 });
+    }
+
+    atualizarCarrinho();
+  }
+
+  function atualizarCarrinho() {
+    let containerItens = document.querySelector('.carrinho-itens');
+    let sidebar = document.querySelector('.carrinho-sidebar');
+    containerItens.innerHTML = '';
+
+    if (carrinho.length > 0) {
+      sidebar.classList.add('ativo');
+    } else {
+      sidebar.classList.remove('ativo');
+    }
+
+    let total = 0;
+
+    carrinho.forEach((item, index) => {
+      total += item.preco * item.qtd;
+
+      containerItens.innerHTML += `
+        <div class="item-carrinho">
+          <div class="item-carrinho-info">
+            <span class="item-carrinho-nome">${item.nome}</span>
+            <span class="item-carrinho-preco">R$ ${item.preco.toFixed(2)}</span>
+          </div>
+          <div class="qtd-box">
+            <button onclick="alterarQtd(${index}, -1)">-</button>
+            <span>${item.qtd}</span>
+            <button onclick="alterarQtd(${index}, 1)">+</button>
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById('subtotal').innerText = `R$ ${total.toFixed(2)}`;
+    document.getElementById('total').innerText = `R$ ${total.toFixed(2)}`;
+  }
+
+  function alterarQtd(index, delta) {
+    carrinho[index].qtd += delta;
+
+    if (carrinho[index].qtd <= 0) {
+      carrinho.splice(index, 1);
+    }
+
+    atualizarCarrinho();
+  }
+</script>
+
+</body>
+</html>

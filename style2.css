@@ -1,4 +1,4 @@
-/* Configurações Gerais do Site */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #0b0914; /* Fundo super escuro igual ao original */
+    background-color: #0b0914;
     color: white;
 }
 
@@ -17,13 +17,13 @@ body {
     padding: 20px;
 }
 
-/* Menu Superior */
+
 .topo-site {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    border-bottom: 2px solid #00f0ff; /* Linha azul neon */
+    border-bottom: 2px solid #00f0ff; 
     background-color: #0b0914;
 }
 
@@ -47,14 +47,14 @@ body {
     padding-bottom: 5px;
 }
 
-/* Cabeçalho da Página */
+
 .header-pagina {
     text-align: center;
     margin: 40px 0;
 }
 
 .titulo-principal {
-    color: #ff007f; /* Rosa neon */
+    color: #ff007f; 
     font-size: 36px;
     margin-bottom: 10px;
 }
@@ -71,27 +71,27 @@ body {
     padding-left: 10px;
 }
 
-/* Estrutura das Linhas de Jogos (De 3 em 3) */
+
 .lista-jogos {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    margin-bottom: 40px; /* Dá espaço entre uma fileira e outra */
+    margin-bottom: 40px; 
 }
 
-/* Estilo do Card de Jogo */
+
 .card {
     background-color: #151221;
     border-radius: 12px;
     overflow: hidden;
-    width: 31%; /* Divide o espaço certinho para caberem 3 por linha */
+    width: 31%; 
     border: 1px solid #231f38;
 }
 
 .card img {
     width: 100%;
     height: 220px;
-    object-fit: cover; /* Evita que a foto fique esticada */
+    object-fit: cover; 
 }
 
 .card-corpo {
@@ -104,7 +104,7 @@ body {
 }
 
 .card-corpo .genero {
-    color: #00f0ff; /* Azul para o gênero */
+    color: #00f0ff; 
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 12px;
@@ -115,10 +115,10 @@ body {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
-    min-height: 63px; /* Garante que os botões fiquem alinhados mesmo se o texto variar */
+    min-height: 63px; 
 }
 
-/* Botão Saber Mais */
+
 .btn {
     width: 100%;
     background-color: transparent;
